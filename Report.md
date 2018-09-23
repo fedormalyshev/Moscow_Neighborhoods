@@ -3,6 +3,7 @@ Business problem: if you are looking to open café, shop, or rent apartment, you
 There are two ways, how we can make such recommendations:
 -	clearly ask the customer about his/her preferences: what venues are important to be in the proximity, density of this venues, and so on
 -	make recommendations based on what we know he/she like
+
 The first way is not simple, because we should ask many questions people can find difficult to answer. 
 The second way is obviously less confusing. We just say, “Hey, you like the district A, why not look at D and M?“ 
 To pursue the second way, we need to somehow cluster districts, based on data we know about them. 
