@@ -45,5 +45,7 @@ limit = 100
 
 8.	Based on the top 10 most common venue categories, cluster districts (K-means clustering algorithm, K=5). The number of clusters K=5 is chosen experimentally and giving the most representative distribution of districts by clusters for this dataset. As a result, each district is assigned to one of 5 clusters.
 
-9.	Show districts labels on the map of Moscow. Label color defines the district's belonging to a particular cluster:
+### 4. Results
+
+Let's show districts labels on the map of Moscow. Label color defines the district's belonging to a particular cluster:
 ![alt text](https://raw.githubusercontent.com/fedormalyshev/Moscow_Neighborhoods/master/m1.png)
