@@ -22,13 +22,17 @@ For this task, we also need to know geographical coordinates of Moscow districts
 Parameters of the API call:
 URL: https://api.foursquare.com/v2/venues/explore?client_id={}&client_secret={}&ll={},{}&v={}&radius={}&limit={}
 where 
+
 client_id, client_secret - access keys to the API, 
+
 ll – longitude and latitude of the center of the district, 
+
 radius = 500
+
 limit = 100
 
 3.	Save info about venues into dataframe. The first 3 rows of the dataframe:
- 
+ https://raw.githubusercontent.com/fedormalyshev/Moscow_Neighborhoods/master/t1.png
 
 4.	Exclude districts with less than 20 venues (less than 20 venues aren’t sufficient for further clustering). 38 out of 120 districts left.
 
@@ -37,4 +41,4 @@ limit = 100
 6.	Calculate frequency of occurrence of each venue category for each district
 
 7.	 Create new dataframe that represents the top 10 venue categories for each district. The first 3 rows of the dataframe:
- 
+ https://raw.githubusercontent.com/fedormalyshev/Moscow_Neighborhoods/master/t2.png
