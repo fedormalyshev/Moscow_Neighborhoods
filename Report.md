@@ -42,3 +42,8 @@ limit = 100
 
 7.	 Create new dataframe that represents the top 10 venue categories for each district. The first 3 rows of the dataframe:
  ![alt text](https://raw.githubusercontent.com/fedormalyshev/Moscow_Neighborhoods/master/t2.png)
+
+8.	Based on the top 10 most common venue categories, c luster districts (K-means clustering algorithm, K=5, I choose K by experimenting). As a result, each district is assigned to one of 5 clusters.
+
+9.	Show districts labels in the map of Moscow, label color shows the district's belonging to a particular cluster:
+![alt text](https://raw.githubusercontent.com/fedormalyshev/Moscow_Neighborhoods/master/m1.png)
