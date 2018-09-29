@@ -48,7 +48,7 @@ limit = 100
 ### 4. Results
 
 Let's show districts labels on the map of Moscow. Label color defines the district's belonging to a particular cluster:
-![alt text](https://raw.githubusercontent.com/fedormalyshev/Moscow_Neighborhoods/master/m2.png)
+![alt text](https://raw.githubusercontent.com/fedormalyshev/Moscow_Neighborhoods/master/m2.PNG)
 
 Looking at the map, people who know Moscow city can clearly identify the following qualitative categories:
 -	the first cluster (purple) – central prestigious districts (with 2 exceptions) 
