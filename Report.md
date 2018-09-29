@@ -18,7 +18,7 @@ For this task, we also need to know geographical coordinates of Moscow districts
 
 1.	For each district in the Moscow city, obtain coordinates of centers of the districts (longitude, latitude) by Nominatim service
 
-2.	For each district, get 100 most popular venues located within 500 meters from the center of the district by Foursquare API. 
+2.	For each district, get 100 most popular venues located within 1000 meters from the center of the district by Foursquare API. 
 Parameters of the API call:
 
 URL: https://api.foursquare.com/v2/venues/explore?client_id={}&client_secret={}&ll={},{}&v={}&radius={}&limit={}, where 
@@ -27,14 +27,14 @@ client_id, client_secret - access keys to the API,
 
 ll – longitude and latitude of the center of the district, 
 
-radius = 500
+radius = 1000
 
 limit = 100
 
 3.	Save info about venues into dataframe. The first 3 rows of the dataframe:
  ![alt text](https://raw.githubusercontent.com/fedormalyshev/Moscow_Neighborhoods/master/t1.png)
 
-4.	Exclude districts with less than 20 venues (less than 20 venues aren’t sufficient for further clustering). 38 out of 120 districts left.
+4.	Exclude districts with less than 20 venues (less than 20 venues aren’t sufficient for further clustering). 36 out of 120 districts left.
 
 5.	Add to the dataframe dummy variables, representing each venue category
 
@@ -43,9 +43,26 @@ limit = 100
 7.	 Create new dataframe that represents the top 10 venue categories for each district. The first 3 rows of the dataframe:
  ![alt text](https://raw.githubusercontent.com/fedormalyshev/Moscow_Neighborhoods/master/t2.png)
 
-8.	Based on the top 10 most common venue categories, cluster districts (K-means clustering algorithm, K=5). The number of clusters K=5 is chosen experimentally and giving the most representative distribution of districts by clusters for this dataset. As a result, each district is assigned to one of 5 clusters.
+8.	Based on the top 10 most common venue categories, cluster districts (K-means clustering algorithm, K=3). The number of clusters K=3 is chosen experimentally and giving the most representative distribution of districts by clusters for this dataset. As a result, each district is assigned to one of 3 clusters.
 
 ### 4. Results
 
 Let's show districts labels on the map of Moscow. Label color defines the district's belonging to a particular cluster:
-![alt text](https://raw.githubusercontent.com/fedormalyshev/Moscow_Neighborhoods/master/m1.png)
+![alt text](https://raw.githubusercontent.com/fedormalyshev/Moscow_Neighborhoods/master/m2.png)
+
+Looking at the map, people who know Moscow city can clearly identify the following qualitative categories:
+-	the first cluster (purple) – central prestigious districts (with 2 exceptions) 
+-	the second cluster (orange) – non-central high quality districts
+-	the third cluster (red) – dormitory areas 
+
+This confirms that our clustering algorithm makes sense.
+
+### 5. Discussion
+
+There are some data issues, that limit effectiveness of the algorithm:
+- insufficient data on Foursquare. From practice, to obtain reliable results of clustering, we should consider only districts with more than 20 venues. For Moscow, 84 out of 120 districts have 20 or less venues on Foursquare, and we should exclude these districs from consideration
+- redundant categorization of venues on Foursquare. For example, there are venues with categories Restaurant, Middle Eastern Restaurant, Caucasian Restaurant, Asian Restaurant, Varenyky restaurant, and so on. For an algorithm, these are separate categories, although by the matter of fact they represent one category - restaurant. To overcome this issue, we can combine Foursquare's categorieds into more broad groups before clustering.
+
+### Conclusion
+
+The algorithm allow us to cluster city districts. To obtain reliable results, it's important to check that data is sufficient and well prepared, and carefully select paramenters of the algorithm (radius of districts, number of clusters, minimum number of venues to consider the district).
