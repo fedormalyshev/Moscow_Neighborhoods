@@ -55,7 +55,9 @@ Looking at the map, people who know Moscow city can clearly identify the followi
 -	the second cluster (orange) – non-central high quality districts
 -	the third cluster (red) – dormitory areas 
 
-This confirms that our clustering algorithm makes sense.
+This confirms that our clustering algorithm makes sense!
+
+So, we for any district (in a resulting dataset), we can say what others districts of the city similar to it.
 
 ### 5. Discussion
 
