@@ -62,9 +62,9 @@ So, we for any district (in a resulting dataset), we can say what others distric
 ### 5. Discussion
 
 There are some data issues, that limit effectiveness of the algorithm:
-- insufficient data on Foursquare. From practice, to obtain reliable results of clustering, we should consider only districts with more than 20 venues. For Moscow, 84 out of 120 districts have 20 or less venues on Foursquare, and we should exclude these districs from consideration
-- redundant categorization of venues on Foursquare. For example, there are venues with categories Restaurant, Middle Eastern Restaurant, Caucasian Restaurant, Asian Restaurant, Varenyky restaurant, and so on. For an algorithm, these are separate categories, although by the matter of fact they represent one category - restaurant. To overcome this issue, we can combine Foursquare's categorieds into more broad groups before clustering.
+- insufficient data on Foursquare. From practice, to obtain reliable results of clustering, we should consider only districts with more than 20 venues. For Moscow, 84 out of 120 districts have 20 or less venues on Foursquare, and we should exclude these districts from consideration
+- redundant categorization of venues on Foursquare. For example, there are venues with categories Restaurant, Middle Eastern Restaurant, Caucasian Restaurant, Asian Restaurant, Varenyky restaurant, and so on. For an algorithm, these are separate categories, although by the matter of fact they represent one category - restaurant. To overcome this issue, we can combine Foursquare's categories into more broad groups before clustering.
 
 ### Conclusion
 
-The algorithm allow us to cluster city districts. To obtain reliable results, it's important to check that data is sufficient and well prepared, and carefully select paramenters of the algorithm (radius of districts, number of clusters, minimum number of venues to consider the district).
+The algorithm allow us to cluster city districts. To obtain reliable results, it's important to check that data is sufficient and well prepared, and carefully select parameters of the algorithm (radius of districts, number of clusters, minimum number of venues to consider the district).
